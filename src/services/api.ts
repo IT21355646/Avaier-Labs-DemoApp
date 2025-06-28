@@ -13,3 +13,26 @@ export const getBorrowerPipeline = async (): Promise<Record<"new" | "in_review" 
     approved: [],
   };
 };
+
+export const getBrokerInfo = async () => {
+  return {
+    name: "Robert Turner",
+    deals: 16,
+    approval_rate: "75%",
+    pending: 7660,
+  };
+};
+
+export const getOnboardingWorkflow = async () => {
+  return {
+    steps: [
+      "Deal Intake",
+      "IDV & Credit Check",
+      "Document Upload",
+      "AI Validation",
+      "Credit Committee",
+      "Approval & Docs",
+      "Funder Syndication",
+    ],
+  };
+};
