@@ -41,7 +41,7 @@ const BorrowerDetail = () => {
       {/* Header */}
       <div>
         <div className="flex justify-between items-center">
-          <h2 className="text-xl font-bold">{name}</h2>
+          <p className="truncate max-w-full text-sm font-medium">{name}</p>
           <span className={`text-xs px-2 py-1 rounded ${getStatusColor(status)}`}>
             {status}
           </span>

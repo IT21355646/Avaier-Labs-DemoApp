@@ -5,15 +5,21 @@ import BrokerOverview from "./features/brokerOverview/BrokerOverview";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="p-4 max-w-[1440px] mx-auto">
       <Header />
-      <main className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-        <BorrowerPipeline />
-        <BorrowerDetail />
-        <BrokerOverview />
-      </main>
+      <div className="grid grid-cols-1 lg:grid-cols-6 gap-4">
+        <div className="lg:col-span-2">
+          <BorrowerPipeline />
+        </div>
+        <div className="lg:col-span-2">
+          <BorrowerDetail />
+        </div>
+        <div className="lg:col-span-2">
+          <BrokerOverview />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
