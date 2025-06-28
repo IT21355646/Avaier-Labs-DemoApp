@@ -1,7 +1,9 @@
 import { Borrower } from "../types/borrower";
 
-// Simulate fetching data from `/api/borrowers/pipeline`
+const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
 export const getBorrowerPipeline = async (): Promise<Record<"new" | "in_review" | "approved", Borrower[]>> => {
+  await delay(500);
   return {
     new: [
       { id: "1", name: "Sarah Dunn", loan_type: "Home Loan", amount: 300000, status: "Renew" },
@@ -14,16 +16,49 @@ export const getBorrowerPipeline = async (): Promise<Record<"new" | "in_review" 
   };
 };
 
-export const getBrokerInfo = async () => {
+export const getBorrowerDetail = async (id: string): Promise<any> => {
+  await delay(300);
   return {
-    name: "Robert Turner",
-    deals: 16,
-    approval_rate: "75%",
-    pending: 7660,
+    id,
+    name: "Sarah Dunn",
+    email: "sarah.dunn@example.com",
+    phone: "(355)123-4557",
+    loan_amount: 300000,
+    status: "In Review",
+    employment: "At Tech Company",
+    income: 120000,
+    existing_loan: 240000,
+    credit_score: 720,
+    source_of_funds: "Declared",
+    risk_signal: "Missing Source of Funds declaration",
+    ai_flags: [
+      "Income Inconsistent with Bank statements",
+      "High Debt-to-Income Ratio detected",
+    ],
   };
 };
 
-export const getOnboardingWorkflow = async () => {
+export const requestDocuments = async (id: string) => {
+  await delay(200);
+  console.log(`📤 Requested documents for borrower ${id}`);
+};
+
+export const sendToValuer = async (id: string) => {
+  await delay(200);
+  console.log(`📤 Sent to valuer for borrower ${id}`);
+};
+
+export const approveLoan = async (id: string) => {
+  await delay(200);
+  console.log(`✅ Loan approved for borrower ${id}`);
+};
+
+export const escalateToCommittee = async (id: string) => {
+  await new Promise((res) => setTimeout(res, 200));
+  console.log(`⚠️ Escalated borrower ${id} to Credit Committee`);
+};
+
+export const getOnboardingWorkflow = async (): Promise<{ steps: string[] }> => {
   return {
     steps: [
       "Deal Intake",
@@ -36,3 +71,19 @@ export const getOnboardingWorkflow = async () => {
     ],
   };
 };
+
+export const getBrokerInfo = async (): Promise<{
+  name: string;
+  deals: number;
+  approval_rate: string;
+  pending: number;
+}> => {
+  return {
+    name: "Robert Turner",
+    deals: 16,
+    approval_rate: "75%",
+    pending: 7660,
+  };
+};
+
+

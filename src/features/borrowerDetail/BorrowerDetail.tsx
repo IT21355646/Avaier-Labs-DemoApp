@@ -3,6 +3,12 @@ import Card from "../../components/ui/Card";
 import { getStatusColor } from "../../utils/statusColor";
 import { AlertTriangle } from "lucide-react";
 import { useState } from "react";
+import {
+  requestDocuments,
+  sendToValuer,
+  approveLoan,
+  escalateToCommittee, // 👈 make sure this is here
+} from "../../services/api";
 
 const BorrowerDetail = () => {
   const { activeBorrower } = useBorrowerStore();
@@ -69,16 +75,25 @@ const BorrowerDetail = () => {
         )}
 
         <div className="flex gap-2 mt-4">
-          <button className="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700">
-            Request Documents
-          </button>
-          <button className="bg-purple-600 text-white px-3 py-1 rounded text-sm hover:bg-purple-700">
-            Send to Valuer
-          </button>
-          <button className="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700">
-            Approve
-          </button>
-        </div>
+  <button
+    onClick={() => requestDocuments(activeBorrower.id)}
+    className="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700"
+  >
+    Request Documents
+  </button>
+  <button
+    onClick={() => sendToValuer(activeBorrower.id)}
+    className="bg-purple-600 text-white px-3 py-1 rounded text-sm hover:bg-purple-700"
+  >
+    Send to Valuer
+  </button>
+  <button
+    onClick={() => approveLoan(activeBorrower.id)}
+    className="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700"
+  >
+    Approve
+  </button>
+</div>
       </div>
 
       {/* Loan Summary */}
@@ -101,10 +116,13 @@ const BorrowerDetail = () => {
 
       {/* Escalate Button */}
       <div>
-        <button className="bg-red-600 text-white px-4 py-2 rounded text-sm hover:bg-red-700">
-          Escalate to Credit Committee
-        </button>
-      </div>
+  <button
+    onClick={() => escalateToCommittee(activeBorrower.id)}
+    className="bg-red-600 text-white px-4 py-2 rounded text-sm hover:bg-red-700"
+  >
+    Escalate to Credit Committee
+  </button>
+</div>
     </Card>
   );
 };

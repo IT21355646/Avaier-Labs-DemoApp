@@ -18,3 +18,5 @@ export const useBorrowerStore = create<BorrowerState>((set) => ({
   setActiveTab: (tab) => set({ activeTab: tab }),
   setActiveBorrower: (borrower) => set({ activeBorrower: borrower }),
 }));
+
+
