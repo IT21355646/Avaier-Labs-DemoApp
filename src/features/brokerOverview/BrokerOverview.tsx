@@ -139,19 +139,19 @@ const BrokerOverview = () => {
         {/* Stats Grid */}
         <div className="grid grid-cols-3 gap-6">
           <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-1">
+            <div className="text-2xl font-bold text-blue-600 mb-1">
               {broker.deals}
             </div>
             <div className="text-sm font-medium text-gray-600">Deals</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-green-600 mb-1">
+            <div className="text-2xl font-bold text-green-600 mb-1">
               {broker.approval_rate}
             </div>
             <div className="text-sm font-medium text-gray-600">Approval Rate</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-orange-600 mb-1">
+            <div className="text-2xl font-bold text-orange-600 mb-1">
               ${broker.pending.toLocaleString()}
             </div>
             <div className="text-sm font-medium text-gray-600">Pending</div>
