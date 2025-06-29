@@ -73,6 +73,7 @@ const BorrowerPipeline = () => {
               {borrowers[tab as keyof typeof borrowers]?.map((b) => (
                 <div
                   key={b.id}
+                  data-testid={`borrower-card-${b.id}`}
                   onClick={() => setActiveBorrower(b)}
                   className={`group cursor-pointer rounded-lg border transition-all duration-200 hover:shadow-md ${
                     activeBorrower?.id === b.id 
