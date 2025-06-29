@@ -1,4 +1,4 @@
-// src/components/ProtectedRoute.tsx
+// Sample protected routes
 import React from "react";
 import { useAuth } from "../context/AuthContext";
 

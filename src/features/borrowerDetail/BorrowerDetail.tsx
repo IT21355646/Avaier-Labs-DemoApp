@@ -16,8 +16,8 @@ const BorrowerDetail = () => {
 
   if (!activeBorrower) {
     return (
-      <Card className="h-full flex items-center justify-center">
-        <div className="text-center py-12">
+      <Card className="flex items-center justify-center">
+        <div className="text-center py-2">
           <div className="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-4">
             <FileText className="w-8 h-8 text-gray-400" />
           </div>

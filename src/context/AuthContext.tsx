@@ -1,4 +1,4 @@
-// src/context/AuthContext.tsx
+// Sample auth context
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 type Role = "Admin" | "Broker";
@@ -13,7 +13,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [isAuthenticated, setAuthenticated] = useState(true); // change to `false` for real login
+  const [isAuthenticated, setAuthenticated] = useState(true);
   const [role, setRole] = useState<Role | null>("Admin"); // Mock role
 
   const login = (role: Role) => {

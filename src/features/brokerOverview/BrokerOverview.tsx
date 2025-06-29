@@ -85,7 +85,6 @@ const BrokerOverview = () => {
       const w = await getOnboardingWorkflow();
       setBroker(b);
 
-      // Use selected workflow template or fallback to API data
       const selectedTemplate = workflowTemplates.find(
         (t) => t.name === selectedWorkflow
       );
@@ -158,7 +157,7 @@ const BrokerOverview = () => {
           </div>
         </div>
 
-        {/* Contact Buttons - Segmented Control */}
+        {/* Contact Buttons */}
         <div className="bg-gray-50 rounded-lg p-1 flex space-x-1">
           <button className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-white bg-blue-600 rounded-md shadow-sm hover:bg-blue-700 transition-colors">
             <Phone size={16} />

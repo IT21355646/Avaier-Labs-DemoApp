@@ -2,7 +2,7 @@
 
 describe("DemoApp E2E Tests", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000"); // Update if hosted differently
+    cy.visit("http://localhost:3000");
   });
 
   it("should update center pane when borrower is selected", () => {
@@ -56,7 +56,6 @@ describe("DemoApp E2E Tests", () => {
   });
 
   it("should conditionally enable escalate button based on risk factors", () => {
-    // Test with borrower-1 which should have escalate enabled for testing
     cy.get('[data-testid="borrower-card-1"]').click();
     cy.get('[data-testid="escalate-committee"]').should('not.be.disabled');
   });
